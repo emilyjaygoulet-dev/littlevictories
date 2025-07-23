@@ -4,16 +4,18 @@ import { RefreshCw, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const prompts = [
-  "Remember: You woke up today. That's already a victory! ✨",
-  "Today's superpower: Being kind to yourself. How will you use it?",
-  "What's one tiny thing that made you smile recently? 🌟",
-  "You're doing better than you think. What small step will you take today?",
-  "Gentle reminder: Progress isn't always visible, but it's always happening.",
-  "Today's mission: Find joy in something ordinary. Ready?",
-  "You're exactly where you need to be. What victory will you create today?",
-  "Small wins count. Big wins count. All wins count. What's yours?",
-  "Today's affirmation: I am worthy of celebrating every small step forward.",
-  "What would you tell a friend who accomplished what you did yesterday?"
+  "You have survived every yesterday. Today is yours to bend gently.",
+  "Some days bloom slowly. You're still blossoming.",
+  "Today smells like cardamom ambition and chamomile calm. Stir and serve.",
+  "The universe whispers through small moments. What will yours tell you?",
+  "You carry starlight in your ordinary Tuesday. Let it shimmer.",
+  "Today asks nothing of you but presence. Everything else is bonus magic.",
+  "Your heart beats wisdom you haven't discovered yet. Listen closely.",
+  "Some victories taste like morning coffee and quiet courage. Both count.",
+  "The world needs your particular brand of gentle thunder. Rumble softly.",
+  "Today's forecast: Partly cloudy with a chance of tiny miracles.",
+  "You're writing a story one small choice at a time. What's your next word?",
+  "The moon celebrates your sleeping. The sun celebrates your waking. Both matter."
 ];
 
 export const DailyPrompt = () => {

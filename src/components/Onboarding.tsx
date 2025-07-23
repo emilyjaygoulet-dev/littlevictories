@@ -12,29 +12,65 @@ const themes = [
     id: "lavender-toast",
     name: "Lavender Toast",
     icon: Coffee,
-    description: "Soft mornings and gentle strength",
-    colors: "from-purple-100 to-yellow-50"
+    description: "Gentle comfort, quiet bravery",
+    colors: "from-purple-200 to-yellow-100",
+    vibe: "Soft mornings"
   },
   {
-    id: "cherry-soda",
+    id: "cherry-soda-spark",
     name: "Cherry Soda Spark", 
     icon: Cherry,
-    description: "Bright energy and playful joy",
-    colors: "from-red-100 to-pink-50"
+    description: "Pop fizz, vibrant energy",
+    colors: "from-red-200 to-pink-100",
+    vibe: "Bright sparks"
   },
   {
     id: "midnight-peony",
     name: "Midnight Peony",
     icon: Moon,
-    description: "Deep wisdom and quiet magic",
-    colors: "from-indigo-100 to-purple-50"
+    description: "Deep magic, poetic grit",
+    colors: "from-indigo-300 to-purple-200",
+    vibe: "Mystical depths"
   },
   {
     id: "croissant-glow",
     name: "Croissant Glow",
     icon: Flower,
-    description: "Warm comfort and golden moments",
-    colors: "from-amber-100 to-orange-50"
+    description: "Cozy warmth, breakfast comfort",
+    colors: "from-amber-200 to-orange-100",
+    vibe: "Golden comfort"
+  },
+  {
+    id: "spicy-meteor",
+    name: "Spicy Meteor",
+    icon: Sparkles,
+    description: "Fiery sass, chaotic brilliance",
+    colors: "from-orange-300 to-yellow-200",
+    vibe: "Cosmic fire"
+  },
+  {
+    id: "moss-matcha",
+    name: "Moss & Matcha",
+    icon: Flower,
+    description: "Earthy calm, sacred slowness",
+    colors: "from-green-200 to-teal-100",
+    vibe: "Natural zen"
+  },
+  {
+    id: "prism-static",
+    name: "Prism Static",
+    icon: Sparkles,
+    description: "Digital glitch, rainbow shimmer",
+    colors: "from-cyan-200 to-purple-200",
+    vibe: "Glitch magic"
+  },
+  {
+    id: "sundae-punks",
+    name: "Sundae Punks",
+    icon: Heart,
+    description: "Retro rebellious joy",
+    colors: "from-yellow-200 to-pink-200",
+    vibe: "Rebel sweetness"
   }
 ];
 
@@ -123,29 +159,34 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
 
             {/* Theme Selection */}
             {isThemeStep && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8 max-w-5xl mx-auto">
                 {themes.map((theme) => {
                   const Icon = theme.icon;
                   return (
                     <Card
                       key={theme.id}
-                      className={`p-6 cursor-pointer transition-all duration-300 border-2 ${
+                      className={`p-4 cursor-pointer transition-all duration-300 border-2 ${
                         selectedTheme === theme.id
-                          ? "border-victory-gold shadow-gentle bg-white/80"
-                          : "border-victory-cream hover:border-victory-gold/50 bg-white/60"
+                          ? "border-victory-gold shadow-gentle bg-white/80 scale-105"
+                          : "border-victory-cream hover:border-victory-gold/50 bg-white/60 hover:scale-102"
                       }`}
                       onClick={() => setSelectedTheme(theme.id)}
                     >
-                      <div className="text-center space-y-3">
-                        <div className={`w-16 h-16 rounded-cozy bg-gradient-to-br ${theme.colors} flex items-center justify-center mx-auto`}>
-                          <Icon className="text-foreground" size={28} />
+                      <div className="text-center space-y-2">
+                        <div className={`w-12 h-12 rounded-cozy bg-gradient-to-br ${theme.colors} flex items-center justify-center mx-auto`}>
+                          <Icon className="text-foreground" size={20} />
                         </div>
-                        <h3 className="font-handwritten font-bold text-lg text-foreground">
+                        <h3 className="font-handwritten font-bold text-sm text-foreground">
                           {theme.name}
                         </h3>
-                        <p className="font-cozy text-sm text-muted-foreground">
-                          {theme.description}
+                        <p className="font-cozy text-xs text-muted-foreground">
+                          {theme.vibe}
                         </p>
+                        {selectedTheme === theme.id && (
+                          <div className="text-victory-gold">
+                            <Sparkles size={16} className="mx-auto animate-sparkle" />
+                          </div>
+                        )}
                       </div>
                     </Card>
                   );

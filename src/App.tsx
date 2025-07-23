@@ -31,7 +31,32 @@ const App = () => {
     setHasCompletedOnboarding(true);
     localStorage.setItem("little-victories-onboarded", "true");
     localStorage.setItem("little-victories-theme", theme);
+    // Apply theme to document body
+    applyTheme(theme);
   };
+
+  const applyTheme = (themeId: string) => {
+    const body = document.body;
+    // Remove all existing theme classes
+    body.classList.remove(
+      'theme-lavender-toast', 
+      'theme-cherry-soda-spark', 
+      'theme-midnight-peony', 
+      'theme-croissant-glow',
+      'theme-spicy-meteor',
+      'theme-moss-matcha', 
+      'theme-prism-static', 
+      'theme-sundae-punks'
+    );
+    // Add the selected theme class
+    body.classList.add(`theme-${themeId}`);
+  };
+
+  useEffect(() => {
+    if (selectedTheme) {
+      applyTheme(selectedTheme);
+    }
+  }, [selectedTheme]);
 
   if (!hasCompletedOnboarding) {
     return (

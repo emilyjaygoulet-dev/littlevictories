@@ -67,7 +67,10 @@ export default {
 					gold: 'hsl(var(--victory-gold))',
 					pink: 'hsl(var(--victory-pink))',
 					cream: 'hsl(var(--victory-cream))',
-					warm: 'hsl(var(--victory-warm))'
+					warm: 'hsl(var(--victory-warm))',
+					primary: 'hsl(var(--victory-primary))',
+					secondary: 'hsl(var(--victory-secondary))',
+					accent: 'hsl(var(--victory-accent))'
 				}
 			},
 			backgroundImage: {

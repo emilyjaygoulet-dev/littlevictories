@@ -8,8 +8,11 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cozy, warm color palette for Little Victories */
-    --background: 28 45% 97%;
+    /* Base robin's egg blue background */
+    --base-background: 178 45% 85%;
+    
+    /* Default theme variables (will be overridden by theme selection) */
+    --background: 178 45% 85%;
     --foreground: 25 20% 25%;
 
     --card: 30 50% 98%;
@@ -55,6 +58,190 @@ All colors MUST be HSL.
 
     /* Animation variables */
     --transition-cozy: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Lavender Toast Theme */
+  .theme-lavender-toast {
+    --background: 270 25% 93%;
+    --foreground: 270 15% 20%;
+    --card: 270 30% 96%;
+    --card-foreground: 270 15% 20%;
+    --primary: 270 35% 75%;
+    --primary-foreground: 270 30% 96%;
+    --secondary: 45 35% 88%;
+    --secondary-foreground: 270 15% 20%;
+    --muted: 270 20% 90%;
+    --muted-foreground: 270 10% 45%;
+    --accent: 270 25% 80%;
+    --accent-foreground: 270 15% 20%;
+    --border: 270 20% 85%;
+    --ring: 270 35% 75%;
+    --victory-primary: 270 35% 75%;
+    --victory-secondary: 45 35% 88%;
+    --victory-accent: 270 25% 80%;
+    --gradient-primary: linear-gradient(135deg, hsl(270 25% 93%), hsl(45 35% 88%));
+    --gradient-secondary: linear-gradient(45deg, hsl(270 35% 75%), hsl(270 25% 80%));
+  }
+
+  /* Cherry Soda Spark Theme */
+  .theme-cherry-soda-spark {
+    --background: 0 85% 96%;
+    --foreground: 340 40% 25%;
+    --card: 0 90% 98%;
+    --card-foreground: 340 40% 25%;
+    --primary: 345 85% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 350 70% 85%;
+    --secondary-foreground: 340 40% 25%;
+    --muted: 0 60% 90%;
+    --muted-foreground: 340 30% 45%;
+    --accent: 355 80% 75%;
+    --accent-foreground: 340 40% 25%;
+    --border: 0 50% 85%;
+    --ring: 345 85% 60%;
+    --victory-primary: 345 85% 60%;
+    --victory-secondary: 350 70% 85%;
+    --victory-accent: 355 80% 75%;
+    --gradient-primary: linear-gradient(135deg, hsl(345 85% 60%), hsl(350 70% 85%));
+    --gradient-secondary: linear-gradient(45deg, hsl(355 80% 75%), hsl(0 85% 96%));
+  }
+
+  /* Midnight Peony Theme */
+  .theme-midnight-peony {
+    --background: 250 25% 15%;
+    --foreground: 270 15% 85%;
+    --card: 250 30% 18%;
+    --card-foreground: 270 15% 85%;
+    --primary: 270 35% 60%;
+    --primary-foreground: 250 25% 15%;
+    --secondary: 260 25% 35%;
+    --secondary-foreground: 270 15% 85%;
+    --muted: 250 20% 25%;
+    --muted-foreground: 270 10% 65%;
+    --accent: 275 30% 70%;
+    --accent-foreground: 250 25% 15%;
+    --border: 250 15% 30%;
+    --ring: 270 35% 60%;
+    --victory-primary: 270 35% 60%;
+    --victory-secondary: 260 25% 35%;
+    --victory-accent: 275 30% 70%;
+    --gradient-primary: linear-gradient(135deg, hsl(250 25% 15%), hsl(260 25% 35%));
+    --gradient-secondary: linear-gradient(45deg, hsl(270 35% 60%), hsl(275 30% 70%));
+  }
+
+  /* Croissant Glow Theme */
+  .theme-croissant-glow {
+    --background: 35 55% 92%;
+    --foreground: 25 25% 25%;
+    --card: 35 60% 95%;
+    --card-foreground: 25 25% 25%;
+    --primary: 40 70% 65%;
+    --primary-foreground: 35 60% 95%;
+    --secondary: 45 50% 80%;
+    --secondary-foreground: 25 25% 25%;
+    --muted: 35 40% 88%;
+    --muted-foreground: 25 20% 45%;
+    --accent: 30 65% 75%;
+    --accent-foreground: 25 25% 25%;
+    --border: 35 35% 82%;
+    --ring: 40 70% 65%;
+    --victory-primary: 40 70% 65%;
+    --victory-secondary: 45 50% 80%;
+    --victory-accent: 30 65% 75%;
+    --gradient-primary: linear-gradient(135deg, hsl(35 55% 92%), hsl(45 50% 80%));
+    --gradient-secondary: linear-gradient(45deg, hsl(40 70% 65%), hsl(30 65% 75%));
+  }
+
+  /* Spicy Meteor Theme */
+  .theme-spicy-meteor {
+    --background: 210 15% 15%;
+    --foreground: 60 100% 50%;
+    --card: 210 20% 18%;
+    --card-foreground: 60 100% 50%;
+    --primary: 15 100% 62%;
+    --primary-foreground: 210 15% 15%;
+    --secondary: 55 100% 50%;
+    --secondary-foreground: 210 15% 15%;
+    --muted: 210 10% 25%;
+    --muted-foreground: 60 80% 70%;
+    --accent: 350 85% 65%;
+    --accent-foreground: 210 15% 15%;
+    --border: 210 15% 30%;
+    --ring: 15 100% 62%;
+    --victory-primary: 15 100% 62%;
+    --victory-secondary: 55 100% 50%;
+    --victory-accent: 350 85% 65%;
+    --gradient-primary: linear-gradient(135deg, hsl(15 100% 62%), hsl(55 100% 50%));
+    --gradient-secondary: linear-gradient(45deg, hsl(350 85% 65%), hsl(60 100% 50%));
+  }
+
+  /* Moss & Matcha Theme */
+  .theme-moss-matcha {
+    --background: 100 25% 85%;
+    --foreground: 120 30% 25%;
+    --card: 100 30% 88%;
+    --card-foreground: 120 30% 25%;
+    --primary: 110 40% 50%;
+    --primary-foreground: 100 30% 88%;
+    --secondary: 85 35% 75%;
+    --secondary-foreground: 120 30% 25%;
+    --muted: 100 20% 80%;
+    --muted-foreground: 120 25% 45%;
+    --accent: 180 30% 70%;
+    --accent-foreground: 120 30% 25%;
+    --border: 100 25% 75%;
+    --ring: 110 40% 50%;
+    --victory-primary: 110 40% 50%;
+    --victory-secondary: 85 35% 75%;
+    --victory-accent: 180 30% 70%;
+    --gradient-primary: linear-gradient(135deg, hsl(100 25% 85%), hsl(85 35% 75%));
+    --gradient-secondary: linear-gradient(45deg, hsl(110 40% 50%), hsl(180 30% 70%));
+  }
+
+  /* Prism Static Theme */
+  .theme-prism-static {
+    --background: 270 30% 92%;
+    --foreground: 210 15% 15%;
+    --card: 270 35% 95%;
+    --card-foreground: 210 15% 15%;
+    --primary: 180 50% 75%;
+    --primary-foreground: 210 15% 15%;
+    --secondary: 300 40% 80%;
+    --secondary-foreground: 210 15% 15%;
+    --muted: 270 25% 88%;
+    --muted-foreground: 210 10% 45%;
+    --accent: 330 60% 85%;
+    --accent-foreground: 210 15% 15%;
+    --border: 270 20% 82%;
+    --ring: 180 50% 75%;
+    --victory-primary: 180 50% 75%;
+    --victory-secondary: 300 40% 80%;
+    --victory-accent: 330 60% 85%;
+    --gradient-primary: linear-gradient(135deg, hsl(270 30% 92%), hsl(180 50% 75%));
+    --gradient-secondary: linear-gradient(45deg, hsl(300 40% 80%), hsl(330 60% 85%));
+  }
+
+  /* Sundae Punks Theme */
+  .theme-sundae-punks {
+    --background: 55 80% 90%;
+    --foreground: 0 0% 20%;
+    --card: 55 85% 93%;
+    --card-foreground: 0 0% 20%;
+    --primary: 200 90% 75%;
+    --primary-foreground: 0 0% 20%;
+    --secondary: 320 70% 85%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 55 60% 85%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 80%;
+    --accent-foreground: 0 0% 20%;
+    --border: 55 50% 80%;
+    --ring: 200 90% 75%;
+    --victory-primary: 200 90% 75%;
+    --victory-secondary: 320 70% 85%;
+    --victory-accent: 0 0% 80%;
+    --gradient-primary: linear-gradient(135deg, hsl(55 80% 90%), hsl(200 90% 75%));
+    --gradient-secondary: linear-gradient(45deg, hsl(320 70% 85%), hsl(0 0% 80%));
 
     --radius: 0.5rem;
 

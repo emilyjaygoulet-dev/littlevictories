@@ -6,16 +6,16 @@ import { Heart, Sparkles } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-cozy">
+    <div className="min-h-screen" style={{background: 'var(--gradient-primary)'}}>
       {/* Header */}
       <header className="text-center py-8 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Heart className="text-victory-pink animate-gentle-bounce" size={32} />
+            <Heart className="text-victory-primary animate-gentle-bounce" size={32} />
             <h1 className="text-4xl md:text-5xl font-handwritten font-bold text-foreground">
               Little Victories
             </h1>
-            <Sparkles className="text-victory-gold animate-sparkle" size={32} />
+            <Sparkles className="text-victory-accent animate-sparkle" size={32} />
           </div>
           <p className="text-lg font-cozy text-muted-foreground max-w-2xl mx-auto">
             Your daily dose of joy, motivation, and gentle reminders that every small step forward is worth celebrating ✨
@@ -43,7 +43,7 @@ const Index = () => {
         </div>
         
         {/* Footer Message */}
-        <div className="text-center mt-12 p-6 bg-white/30 backdrop-blur-sm rounded-cozy border border-victory-cream">
+        <div className="text-center mt-12 p-6 bg-white/30 backdrop-blur-sm rounded-cozy border border-victory-secondary">
           <p className="font-handwritten text-lg text-foreground mb-4">
             Remember: You're doing amazing, even when it doesn't feel like it 💕
           </p>

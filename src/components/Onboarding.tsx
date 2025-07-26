@@ -1,7 +1,17 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Sparkles, Heart, Coffee, Moon, Cherry, Flower } from "lucide-react";
+import { Sparkles, Heart } from "lucide-react";
+
+// Import theme icons
+import lavenderToastIcon from "@/assets/lavender-toast-icon.png";
+import cherrySodaSparkIcon from "@/assets/cherry-soda-spark-icon.png";
+import midnightPeonyIcon from "@/assets/midnight-peony-icon.png";
+import croissantGlowIcon from "@/assets/croissant-glow-icon.png";
+import spicyMeteorIcon from "@/assets/spicy-meteor-icon.png";
+import mossMatchaIcon from "@/assets/moss-matcha-icon.png";
+import prismStaticIcon from "@/assets/prism-static-icon.png";
+import sundaePunksIcon from "@/assets/sundae-punks-icon.png";
 
 interface OnboardingProps {
   onComplete: (selectedTheme: string) => void;
@@ -11,7 +21,7 @@ const themes = [
   {
     id: "lavender-toast",
     name: "Lavender Toast",
-    icon: Coffee,
+    iconImage: lavenderToastIcon,
     description: "Gentle comfort, quiet bravery",
     colors: "from-purple-200 to-yellow-100",
     vibe: "Soft mornings"
@@ -19,7 +29,7 @@ const themes = [
   {
     id: "cherry-soda-spark",
     name: "Cherry Soda Spark", 
-    icon: Cherry,
+    iconImage: cherrySodaSparkIcon,
     description: "Pop fizz, vibrant energy",
     colors: "from-red-200 to-pink-100",
     vibe: "Bright sparks"
@@ -27,7 +37,7 @@ const themes = [
   {
     id: "midnight-peony",
     name: "Midnight Peony",
-    icon: Moon,
+    iconImage: midnightPeonyIcon,
     description: "Deep magic, poetic grit",
     colors: "from-indigo-300 to-purple-200",
     vibe: "Mystical depths"
@@ -35,7 +45,7 @@ const themes = [
   {
     id: "croissant-glow",
     name: "Croissant Glow",
-    icon: Flower,
+    iconImage: croissantGlowIcon,
     description: "Cozy warmth, breakfast comfort",
     colors: "from-amber-200 to-orange-100",
     vibe: "Golden comfort"
@@ -43,7 +53,7 @@ const themes = [
   {
     id: "spicy-meteor",
     name: "Spicy Meteor",
-    icon: Sparkles,
+    iconImage: spicyMeteorIcon,
     description: "Fiery sass, chaotic brilliance",
     colors: "from-orange-300 to-yellow-200",
     vibe: "Cosmic fire"
@@ -51,7 +61,7 @@ const themes = [
   {
     id: "moss-matcha",
     name: "Moss & Matcha",
-    icon: Flower,
+    iconImage: mossMatchaIcon,
     description: "Earthy calm, sacred slowness",
     colors: "from-green-200 to-teal-100",
     vibe: "Natural zen"
@@ -59,7 +69,7 @@ const themes = [
   {
     id: "prism-static",
     name: "Prism Static",
-    icon: Sparkles,
+    iconImage: prismStaticIcon,
     description: "Digital glitch, rainbow shimmer",
     colors: "from-cyan-200 to-purple-200",
     vibe: "Glitch magic"
@@ -67,7 +77,7 @@ const themes = [
   {
     id: "sundae-punks",
     name: "Sundae Punks",
-    icon: Heart,
+    iconImage: sundaePunksIcon,
     description: "Retro rebellious joy",
     colors: "from-yellow-200 to-pink-200",
     vibe: "Rebel sweetness"
@@ -120,7 +130,7 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
   const canProceed = !isThemeStep || selectedTheme;
 
   return (
-    <div className="min-h-screen bg-gradient-cozy flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4" style={{background: '#00CCCC'}}>
       <div className="max-w-2xl w-full">
         <Card className="p-8 bg-gradient-warm border-none shadow-warm">
           <div className="text-center space-y-6">
@@ -161,7 +171,6 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
             {isThemeStep && (
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8 max-w-5xl mx-auto">
                 {themes.map((theme) => {
-                  const Icon = theme.icon;
                   return (
                     <Card
                       key={theme.id}
@@ -173,8 +182,12 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
                       onClick={() => setSelectedTheme(theme.id)}
                     >
                       <div className="text-center space-y-2">
-                        <div className={`w-12 h-12 rounded-cozy bg-gradient-to-br ${theme.colors} flex items-center justify-center mx-auto`}>
-                          <Icon className="text-foreground" size={20} />
+                        <div className="w-16 h-16 rounded-lg flex items-center justify-center mx-auto overflow-hidden">
+                          <img 
+                            src={theme.iconImage} 
+                            alt={theme.name}
+                            className="w-full h-full object-contain"
+                          />
                         </div>
                         <h3 className="font-handwritten font-bold text-sm text-foreground">
                           {theme.name}

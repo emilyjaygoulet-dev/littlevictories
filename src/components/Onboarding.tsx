@@ -21,7 +21,7 @@ const themes = [
   {
     id: "lavender-toast",
     name: "Lavender Toast",
-    iconImage: lavenderToastIcon,
+    iconImage: "/lovable-uploads/908e047f-1adc-4716-b522-abd149ae42bd.png",
     description: "Gentle comfort, quiet bravery",
     colors: "from-purple-200 to-yellow-100",
     vibe: "Soft mornings"

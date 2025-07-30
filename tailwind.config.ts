@@ -84,7 +84,9 @@ export default {
 			},
 			fontFamily: {
 				'cozy': ['Inter', 'system-ui', 'sans-serif'],
-				'handwritten': ['Comic Neue', 'cursive']
+				'handwritten': ['Comic Neue', 'cursive'],
+				'lavender-serif': ['Rosarivo', 'Georgia', 'serif'], // Lavender Toast headlines
+				'lavender-body': ['Modernist', 'Inter', 'system-ui', 'sans-serif'] // Lavender Toast body
 			},
 			borderRadius: {
 				'cozy': '1.5rem',
@@ -120,6 +122,53 @@ export default {
 				'cozy-float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-8px)' }
+				},
+				// Lavender Toast specific animations
+				'steam-rise': {
+					'0%': { 
+						opacity: '0.8', 
+						transform: 'translateY(0px) scale(1)' 
+					},
+					'50%': { 
+						opacity: '0.4', 
+						transform: 'translateY(-20px) scale(1.1)' 
+					},
+					'100%': { 
+						opacity: '0', 
+						transform: 'translateY(-40px) scale(1.2)' 
+					}
+				},
+				'kintsugi-glow': {
+					'0%, 100%': { 
+						filter: 'drop-shadow(0 0 2px hsl(45 85% 55% / 0.3))' 
+					},
+					'50%': { 
+						filter: 'drop-shadow(0 0 8px hsl(45 85% 55% / 0.6))' 
+					}
+				},
+				'page-turn': {
+					'0%': { 
+						transform: 'perspective(1000px) rotateY(0deg)',
+						opacity: '1'
+					},
+					'50%': { 
+						transform: 'perspective(1000px) rotateY(-90deg)',
+						opacity: '0.7'
+					},
+					'100%': { 
+						transform: 'perspective(1000px) rotateY(0deg)',
+						opacity: '1'
+					}
+				},
+				'gentle-pulse': {
+					'0%, 100%': { 
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'50%': { 
+						transform: 'scale(1.02)',
+						opacity: '0.9'
+					}
 				}
 			},
 			animation: {
@@ -127,7 +176,12 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'gentle-bounce': 'gentle-bounce 2s ease-in-out infinite',
 				'sparkle': 'sparkle 1.5s ease-in-out infinite',
-				'cozy-float': 'cozy-float 3s ease-in-out infinite'
+				'cozy-float': 'cozy-float 3s ease-in-out infinite',
+				// Lavender Toast animations
+				'steam-rise': 'steam-rise 2s ease-out infinite',
+				'kintsugi-glow': 'kintsugi-glow 3s ease-in-out infinite',
+				'page-turn': 'page-turn 0.6s ease-in-out',
+				'gentle-pulse': 'gentle-pulse 4s ease-in-out infinite'
 			}
 		}
 	},

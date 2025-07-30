@@ -21,7 +21,7 @@ const themes = [
   {
     id: "lavender-toast",
     name: "Lavender Toast",
-    iconImage: "/lovable-uploads/908e047f-1adc-4716-b522-abd149ae42bd.png",
+    iconImage: "/lovable-uploads/b3934340-e648-4577-aff7-b2dbf657a62d.png",
     description: "Gentle comfort, quiet bravery",
     colors: "from-purple-200 to-yellow-100",
     vibe: "Soft mornings"
@@ -29,7 +29,7 @@ const themes = [
   {
     id: "cherry-soda-spark",
     name: "Cherry Soda Spark", 
-    iconImage: cherrySodaSparkIcon,
+    iconImage: "/lovable-uploads/d26e68c3-531c-4cc8-b8e5-1bfe3f963ecc.png",
     description: "Pop fizz, vibrant energy",
     colors: "from-red-200 to-pink-100",
     vibe: "Bright sparks"
@@ -37,7 +37,7 @@ const themes = [
   {
     id: "midnight-peony",
     name: "Midnight Peony",
-    iconImage: midnightPeonyIcon,
+    iconImage: "/lovable-uploads/0236faee-c855-436a-8a6a-308f4dea2299.png",
     description: "Deep magic, poetic grit",
     colors: "from-indigo-300 to-purple-200",
     vibe: "Mystical depths"
@@ -45,7 +45,7 @@ const themes = [
   {
     id: "croissant-glow",
     name: "Croissant Glow",
-    iconImage: croissantGlowIcon,
+    iconImage: "/lovable-uploads/602125de-53f4-45b5-908e-098849e4f320.png",
     description: "Cozy warmth, breakfast comfort",
     colors: "from-amber-200 to-orange-100",
     vibe: "Golden comfort"
@@ -53,7 +53,7 @@ const themes = [
   {
     id: "spicy-meteor",
     name: "Spicy Meteor",
-    iconImage: spicyMeteorIcon,
+    iconImage: "/lovable-uploads/c973e0e9-08c2-4252-8954-a9ca106e1a10.png",
     description: "Fiery sass, chaotic brilliance",
     colors: "from-orange-300 to-yellow-200",
     vibe: "Cosmic fire"
@@ -61,7 +61,7 @@ const themes = [
   {
     id: "moss-matcha",
     name: "Moss & Matcha",
-    iconImage: mossMatchaIcon,
+    iconImage: "/lovable-uploads/d637f269-ace2-497d-acf4-de769a617e43.png",
     description: "Earthy calm, sacred slowness",
     colors: "from-green-200 to-teal-100",
     vibe: "Natural zen"
@@ -69,7 +69,7 @@ const themes = [
   {
     id: "prism-static",
     name: "Prism Static",
-    iconImage: prismStaticIcon,
+    iconImage: "/lovable-uploads/5836e4c6-5cdc-4d60-bbca-2418cba1cd32.png",
     description: "Digital glitch, rainbow shimmer",
     colors: "from-cyan-200 to-purple-200",
     vibe: "Glitch magic"
@@ -77,7 +77,7 @@ const themes = [
   {
     id: "sundae-punks",
     name: "Sundae Punks",
-    iconImage: sundaePunksIcon,
+    iconImage: "/lovable-uploads/64001668-46c8-4d8e-8a72-b07d3ad52c53.png",
     description: "Retro rebellious joy",
     colors: "from-yellow-200 to-pink-200",
     vibe: "Rebel sweetness"
@@ -96,7 +96,7 @@ const onboardingSteps = [
     content: "Here, we celebrate everything—from making your bed to moving mountains. Both matter."
   },
   {
-    title: "Pick your flavor",
+    title: "Pick your vibe",
     subtitle: "Choose the vibe that speaks to your soul",
     content: "Each theme carries its own magic. Which one feels like home?"
   },

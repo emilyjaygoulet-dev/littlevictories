@@ -130,9 +130,9 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
   const canProceed = !isThemeStep || selectedTheme;
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{background: '#00CCCC'}}>
+    <div className="min-h-screen flex items-center justify-center p-4" style={{background: '#7CD8DE'}}>
       <div className="max-w-2xl w-full">
-        <Card className="p-8 bg-gradient-warm border-none shadow-warm">
+        <Card className="p-8 bg-white/95 backdrop-blur-sm border-white/50 shadow-2xl">
           <div className="text-center space-y-6">
             {/* Progress dots */}
             <div className="flex justify-center gap-2 mb-8">
@@ -141,8 +141,8 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
                   key={index}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index <= currentStep 
-                      ? "bg-victory-gold shadow-gentle" 
-                      : "bg-victory-cream"
+                      ? "bg-blue-600 shadow-lg" 
+                      : "bg-gray-300"
                   }`}
                 />
               ))}
@@ -150,19 +150,19 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
 
             {/* Header */}
             <div className="flex items-center justify-center gap-3 mb-6">
-              <Heart className="text-victory-pink animate-gentle-bounce" size={28} />
-              <Sparkles className="text-victory-gold animate-sparkle" size={28} />
+              <Heart className="text-pink-600 animate-gentle-bounce" size={28} />
+              <Sparkles className="text-amber-500 animate-sparkle" size={28} />
             </div>
 
             {/* Content */}
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-4xl font-onboarding-title font-bold text-foreground">
+              <h1 className="text-3xl md:text-4xl font-onboarding-title font-bold text-gray-800 drop-shadow-sm">
                 {onboardingSteps[currentStep].title}
               </h1>
-              <h2 className="text-xl font-onboarding-title text-muted-foreground">
+              <h2 className="text-xl font-onboarding-title text-gray-700 drop-shadow-sm">
                 {onboardingSteps[currentStep].subtitle}
               </h2>
-              <p className="text-lg font-onboarding-body text-foreground leading-relaxed max-w-lg mx-auto">
+              <p className="text-lg font-onboarding-body text-gray-700 leading-relaxed max-w-lg mx-auto drop-shadow-sm">
                 {onboardingSteps[currentStep].content}
               </p>
             </div>
@@ -176,8 +176,8 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
                       key={theme.id}
                       className={`p-4 cursor-pointer transition-all duration-300 border-2 ${
                         selectedTheme === theme.id
-                          ? "border-victory-gold shadow-gentle bg-white/80 scale-105"
-                          : "border-victory-cream hover:border-victory-gold/50 bg-white/60 hover:scale-102"
+                          ? "border-blue-600 shadow-xl bg-white scale-105"
+                          : "border-gray-300 hover:border-blue-400 bg-white/90 hover:scale-102"
                       }`}
                       onClick={() => setSelectedTheme(theme.id)}
                     >
@@ -189,14 +189,14 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        <h3 className="font-onboarding-title font-bold text-sm text-foreground">
+                        <h3 className="font-onboarding-title font-bold text-sm text-gray-800">
                           {theme.name}
                         </h3>
-                        <p className="font-onboarding-body text-xs text-muted-foreground">
+                        <p className="font-onboarding-body text-xs text-gray-600">
                           {theme.vibe}
                         </p>
                         {selectedTheme === theme.id && (
-                          <div className="text-victory-gold">
+                          <div className="text-blue-600">
                             <Sparkles size={16} className="mx-auto animate-sparkle" />
                           </div>
                         )}
@@ -213,7 +213,7 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
                 variant="outline"
                 onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
                 disabled={currentStep === 0}
-                className="bg-white/50 border-victory-cream hover:bg-victory-cream/50"
+                className="bg-white/80 border-gray-400 text-gray-700 hover:bg-gray-50 hover:border-gray-500"
               >
                 Back
               </Button>
@@ -221,7 +221,7 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
               <Button
                 onClick={handleNext}
                 disabled={!canProceed}
-                className="bg-victory-gold hover:bg-victory-gold/90 text-white font-onboarding-title px-8"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-onboarding-title px-8 shadow-lg"
               >
                 {isLastStep ? "Begin Your Journey" : "Continue"}
               </Button>

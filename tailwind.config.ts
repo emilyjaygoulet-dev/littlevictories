@@ -86,7 +86,9 @@ export default {
 				'cozy': ['Inter', 'system-ui', 'sans-serif'],
 				'handwritten': ['Comic Neue', 'cursive'],
 				'lavender-serif': ['Rosarivo', 'Georgia', 'serif'], // Lavender Toast headlines
-				'lavender-body': ['Modernist', 'Inter', 'system-ui', 'sans-serif'] // Lavender Toast body
+				'lavender-body': ['Modernist', 'Inter', 'system-ui', 'sans-serif'], // Lavender Toast body
+				'onboarding-title': ['Aref Ruqaa Ink', 'serif'], // Onboarding titles and headers
+				'onboarding-body': ['Arima', 'sans-serif'] // Onboarding body text
 			},
 			borderRadius: {
 				'cozy': '1.5rem',

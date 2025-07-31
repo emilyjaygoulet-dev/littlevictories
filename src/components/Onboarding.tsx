@@ -156,13 +156,13 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
 
             {/* Content */}
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-4xl font-handwritten font-bold text-foreground">
+              <h1 className="text-3xl md:text-4xl font-onboarding-title font-bold text-foreground">
                 {onboardingSteps[currentStep].title}
               </h1>
-              <h2 className="text-xl font-handwritten text-muted-foreground">
+              <h2 className="text-xl font-onboarding-title text-muted-foreground">
                 {onboardingSteps[currentStep].subtitle}
               </h2>
-              <p className="text-lg font-cozy text-foreground leading-relaxed max-w-lg mx-auto">
+              <p className="text-lg font-onboarding-body text-foreground leading-relaxed max-w-lg mx-auto">
                 {onboardingSteps[currentStep].content}
               </p>
             </div>
@@ -189,10 +189,10 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        <h3 className="font-handwritten font-bold text-sm text-foreground">
+                        <h3 className="font-onboarding-title font-bold text-sm text-foreground">
                           {theme.name}
                         </h3>
-                        <p className="font-cozy text-xs text-muted-foreground">
+                        <p className="font-onboarding-body text-xs text-muted-foreground">
                           {theme.vibe}
                         </p>
                         {selectedTheme === theme.id && (
@@ -221,7 +221,7 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
               <Button
                 onClick={handleNext}
                 disabled={!canProceed}
-                className="bg-victory-gold hover:bg-victory-gold/90 text-white font-handwritten px-8"
+                className="bg-victory-gold hover:bg-victory-gold/90 text-white font-onboarding-title px-8"
               >
                 {isLastStep ? "Begin Your Journey" : "Continue"}
               </Button>

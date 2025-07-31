@@ -87,6 +87,8 @@ export default {
 				'handwritten': ['Comic Neue', 'cursive'],
 				'lavender-serif': ['Rosarivo', 'Georgia', 'serif'], // Lavender Toast headlines
 				'lavender-body': ['Modernist', 'Inter', 'system-ui', 'sans-serif'], // Lavender Toast body
+				'lavender-header': ['Caveat', 'cursive'], // Lavender Toast headers with Caveat
+				'lavender-text': ['Patrick Hand', 'cursive'], // Lavender Toast body with Patrick Hand
 				'onboarding-title': ['Aref Ruqaa Ink', 'serif'], // Onboarding titles and headers
 				'onboarding-body': ['Arima', 'sans-serif'] // Onboarding body text
 			},

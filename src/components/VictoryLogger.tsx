@@ -83,7 +83,7 @@ export const VictoryLogger = () => {
         <div className="space-y-4">
           <div className="flex items-center gap-2 mb-4">
             <Trophy className="text-victory-gold" size={20} />
-            <h3 className={`text-xl font-bold text-foreground ${isLavenderToast ? 'font-lavender-serif' : 'font-handwritten'}`}>
+            <h3 className={`text-xl font-bold text-foreground ${isLavenderToast ? 'font-lavender-header' : 'font-handwritten'}`}>
               {isLavenderToast ? "Light Collection" : "Log Your Victory"}
             </h3>
           </div>
@@ -94,13 +94,13 @@ export const VictoryLogger = () => {
             onChange={(e) => setNewVictory(e.target.value)}
             className={`min-h-[100px] border-victory-cream rounded-cozy resize-none ${
               isLavenderToast 
-                ? 'bg-background/60 font-lavender-body steam-effect' 
+                ? 'bg-background/60 font-lavender-text steam-effect' 
                 : 'bg-white/70 font-cozy'
             }`}
           />
           
           <div className="space-y-3">
-            <p className={`text-sm text-muted-foreground ${isLavenderToast ? 'font-lavender-body' : 'font-cozy'}`}>
+            <p className={`text-sm text-muted-foreground ${isLavenderToast ? 'font-lavender-text' : 'font-cozy'}`}>
               {isLavenderToast ? "What gentle mood holds this moment?" : "How does this victory feel?"}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -127,7 +127,7 @@ export const VictoryLogger = () => {
             onClick={addVictory}
             className={`w-full transition-colors duration-300 font-medium ${
               isLavenderToast 
-                ? 'lavender-button font-lavender-body kintsugi-element animate-page-turn' 
+                ? 'lavender-button font-lavender-text kintsugi-element animate-page-turn' 
                 : 'bg-victory-gold hover:bg-primary font-cozy'
             }`}
             disabled={!newVictory.trim()}
@@ -142,7 +142,7 @@ export const VictoryLogger = () => {
         <Card className={`p-6 border-victory-cream shadow-gentle ${isLavenderToast ? 'linen-texture bg-card/80' : 'bg-card'}`}>
           <div className="flex items-center gap-2 mb-4">
             <Star className="text-victory-pink" size={20} />
-            <h3 className={`text-xl font-bold text-foreground ${isLavenderToast ? 'font-lavender-serif' : 'font-handwritten'}`}>
+            <h3 className={`text-xl font-bold text-foreground ${isLavenderToast ? 'font-lavender-header' : 'font-handwritten'}`}>
               {isLavenderToast ? "Your Gentle Archive" : "Your Victory Garden"}
             </h3>
           </div>
@@ -157,10 +157,10 @@ export const VictoryLogger = () => {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className={`text-foreground leading-relaxed ${isLavenderToast ? 'font-lavender-body' : 'font-cozy'}`}>
+                    <p className={`text-foreground leading-relaxed ${isLavenderToast ? 'font-lavender-text' : 'font-cozy'}`}>
                       {victory.text}
                     </p>
-                    <p className={`text-xs text-muted-foreground mt-2 ${isLavenderToast ? 'font-lavender-body' : 'font-cozy'}`}>
+                    <p className={`text-xs text-muted-foreground mt-2 ${isLavenderToast ? 'font-lavender-text' : 'font-cozy'}`}>
                       {victory.timestamp.toLocaleDateString()} at {victory.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </p>
                   </div>

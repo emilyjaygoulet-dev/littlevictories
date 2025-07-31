@@ -41,19 +41,19 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Heart className={`text-victory-primary ${isLavenderToast ? 'animate-gentle-pulse' : 'animate-gentle-bounce'}`} size={32} />
-            <h1 className={`text-4xl md:text-5xl font-bold text-foreground ${isLavenderToast ? 'font-lavender-serif' : 'font-handwritten'}`}>
+            <h1 className={`text-4xl md:text-5xl font-bold text-foreground ${isLavenderToast ? 'font-lavender-header' : 'font-handwritten'}`}>
               {themeContent.title}
             </h1>
             <Sparkles className={`text-victory-accent ${isLavenderToast ? 'animate-kintsugi-glow' : 'animate-sparkle'}`} size={32} />
           </div>
           
           {isLavenderToast && (
-            <h2 className="text-2xl md:text-3xl font-lavender-serif text-foreground mb-4 opacity-80">
+            <h2 className="text-2xl md:text-3xl font-lavender-header text-foreground mb-4 opacity-80">
               {themeContent.subtitle}
             </h2>
           )}
           
-          <p className={`text-lg max-w-2xl mx-auto ${isLavenderToast ? 'font-lavender-body text-muted-foreground' : 'font-cozy text-muted-foreground'}`}>
+          <p className={`text-lg max-w-2xl mx-auto ${isLavenderToast ? 'font-lavender-text text-muted-foreground' : 'font-cozy text-muted-foreground'}`}>
             {isLavenderToast ? themeContent.description : themeContent.subtitle}
           </p>
         </div>
@@ -82,10 +82,10 @@ const Index = () => {
         <div className={`text-center mt-12 p-6 backdrop-blur-sm rounded-cozy border border-victory-secondary ${isLavenderToast ? 'linen-texture bg-card/40 kintsugi-element' : 'bg-white/30'}`}>
           {isLavenderToast ? (
             <>
-              <p className="font-lavender-serif text-xl text-foreground mb-4">
+              <p className="font-lavender-header text-xl text-foreground mb-4">
                 "You've survived every 'worst day' so far. This one too."
               </p>
-              <p className="font-lavender-body text-sm text-muted-foreground">
+              <p className="font-lavender-text text-sm text-muted-foreground">
                 Your heart is a room with open windows. Let the air move through.
               </p>
             </>

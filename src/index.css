@@ -109,6 +109,106 @@ All colors MUST be HSL.
     --linen-texture: 42 30% 92%; /* Subtle background texture */
   }
 
+/* Lavender Toast Theme */
+.lavender-toast {
+  --background: 37 32% 91%; /* #F8EFD4 Toasted Cream */
+  --foreground: 30 25% 25%; /* Dark brown for text */
+  --card: 37 32% 91%; /* #F8EFD4 */
+  --card-foreground: 30 25% 25%;
+  --popover: 37 32% 91%;
+  --popover-foreground: 30 25% 25%;
+  --primary: 269 35% 78%; /* #D6CDEA Lavender Mist */
+  --primary-foreground: 30 25% 25%;
+  --secondary: 44 23% 76%; /* #E6D8BC Oatmilk Beige */
+  --secondary-foreground: 30 25% 25%;
+  --muted: 44 23% 76%; /* #E6D8BC */
+  --muted-foreground: 0 0% 71%; /* #B6B6B6 Warm Gray */
+  --accent: 262 45% 80%; /* #C4B3E6 Soft Violet */
+  --accent-foreground: 30 25% 25%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 262 45% 80%; /* #C4B3E6 */
+  --input: 44 23% 76%; /* #E6D8BC */
+  --ring: 269 35% 78%; /* #D6CDEA */
+  --radius: 1.5rem;
+  
+  /* Lavender Toast specific colors */
+  --lavender-primary: 269 35% 78%; /* #D6CDEA */
+  --lavender-secondary: 44 23% 76%; /* #E6D8BC */
+  --lavender-accent: 262 45% 80%; /* #C4B3E6 */
+  --lavender-pressed: 262 35% 68%; /* #A38FC1 */
+  
+  /* Texture and effects */
+  --gradient-lavender: linear-gradient(135deg, hsl(var(--lavender-primary)), hsl(var(--lavender-accent)));
+  --shadow-kintsugi: 0 4px 20px hsl(45 85% 55% / 0.15);
+  --transition-gentle: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Background texture */
+  background-image: 
+    linear-gradient(45deg, transparent 45%, hsl(269 35% 78% / 0.03) 50%, transparent 55%),
+    linear-gradient(-45deg, transparent 45%, hsl(262 45% 80% / 0.02) 50%, transparent 55%);
+  background-size: 20px 20px;
+}
+
+/* Lavender Toast typography */
+.lavender-toast h1,
+.lavender-toast h2,
+.lavender-toast h3,
+.lavender-toast .lavender-header {
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+}
+
+.lavender-toast p,
+.lavender-toast .lavender-text,
+.lavender-toast .lavender-body,
+.lavender-toast input,
+.lavender-toast textarea,
+.lavender-toast button {
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 400;
+}
+
+/* Kintsugi effect for buttons and cards in Lavender Toast */
+.lavender-toast .kintsugi-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.lavender-toast .kintsugi-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, hsl(45 85% 55% / 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: var(--transition-gentle);
+}
+
+.lavender-toast .kintsugi-effect:hover::before {
+  opacity: 1;
+  animation: kintsugi-glow 2s ease-in-out infinite;
+}
+
+/* Steam animation for Lavender Toast */
+.lavender-toast .steam-effect {
+  position: relative;
+}
+
+.lavender-toast .steam-effect::after {
+  content: '☁';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: steam-rise 3s ease-in-out infinite;
+  color: hsl(var(--lavender-accent));
+  font-size: 0.75rem;
+}
+
   /* Cherry Soda Spark Theme */
   .theme-cherry-soda-spark {
     --background: 0 85% 96%;

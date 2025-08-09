@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Sparkles, Heart } from "lucide-react";
+import { RegistrationForm } from "./RegistrationForm";
 
 // Import theme icons
 import lavenderToastIcon from "@/assets/lavender-toast-icon.png";
@@ -96,6 +97,11 @@ const onboardingSteps = [
     content: "Here, we celebrate everything—from making your bed to moving mountains. Both matter."
   },
   {
+    title: "Join the celebration",
+    subtitle: "Create your account to continue",
+    content: "Let's get you set up so we can celebrate your victories together."
+  },
+  {
     title: "Pick your vibe",
     subtitle: "Choose the vibe that speaks to your soul",
     content: "Each theme carries its own magic. Which one feels like home?"
@@ -115,9 +121,12 @@ const onboardingSteps = [
 export const Onboarding = ({ onComplete }: OnboardingProps) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedTheme, setSelectedTheme] = useState("");
+  const [userData, setUserData] = useState(null);
 
-  const isThemeStep = currentStep === 2;
+  const isRegistrationStep = currentStep === 2;
+  const isThemeStep = currentStep === 3;
   const isLastStep = currentStep === onboardingSteps.length - 1;
+  const isFirstStep = currentStep === 0;
 
   const handleNext = () => {
     if (isLastStep) {
@@ -127,7 +136,39 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
     }
   };
 
-  const canProceed = !isThemeStep || selectedTheme;
+  const handleRegistrationComplete = (data: any) => {
+    setUserData(data);
+    setCurrentStep(currentStep + 1);
+  };
+
+  const canProceed = isRegistrationStep 
+    ? false 
+    : (!isThemeStep || selectedTheme);
+
+  if (isRegistrationStep) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4" style={{background: '#7CD8DE'}}>
+        <div className="max-w-2xl w-full">
+          <div className="flex justify-center gap-2 mb-8">
+            {onboardingSteps.map((_, index) => (
+              <div
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index <= currentStep 
+                    ? "bg-blue-600 shadow-lg" 
+                    : "bg-gray-300"
+                }`}
+              />
+            ))}
+          </div>
+          <RegistrationForm 
+            onComplete={handleRegistrationComplete}
+            onBack={() => setCurrentStep(currentStep - 1)}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4" style={{background: '#7CD8DE'}}>
@@ -156,13 +197,13 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
 
             {/* Content */}
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-4xl font-onboarding-title font-bold text-gray-800 drop-shadow-sm">
+              <h1 className="text-3xl md:text-4xl font-aref-ruqaa font-bold text-gray-800 drop-shadow-sm">
                 {onboardingSteps[currentStep].title}
               </h1>
-              <h2 className="text-xl font-onboarding-title text-gray-700 drop-shadow-sm">
+              <h2 className="text-xl font-aref-ruqaa text-gray-700 drop-shadow-sm">
                 {onboardingSteps[currentStep].subtitle}
               </h2>
-              <p className="text-lg font-onboarding-body text-gray-700 leading-relaxed max-w-lg mx-auto drop-shadow-sm">
+              <p className="text-lg font-arima text-gray-700 leading-relaxed max-w-lg mx-auto drop-shadow-sm">
                 {onboardingSteps[currentStep].content}
               </p>
             </div>
@@ -189,10 +230,10 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        <h3 className="font-onboarding-title font-bold text-sm text-gray-800">
+                        <h3 className="font-aref-ruqaa font-bold text-sm text-gray-800">
                           {theme.name}
                         </h3>
-                        <p className="font-onboarding-body text-xs text-gray-600">
+                        <p className="font-arima text-xs text-gray-600">
                           {theme.vibe}
                         </p>
                         {selectedTheme === theme.id && (
@@ -209,19 +250,22 @@ export const Onboarding = ({ onComplete }: OnboardingProps) => {
 
             {/* Navigation */}
             <div className="flex justify-between items-center mt-8 pt-6">
-              <Button
-                variant="outline"
-                onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
-                disabled={currentStep === 0}
-                className="bg-white/80 border-gray-400 text-gray-700 hover:bg-gray-50 hover:border-gray-500"
-              >
-                Back
-              </Button>
+              {!isFirstStep ? (
+                <Button
+                  variant="outline"
+                  onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-aref-ruqaa px-8 shadow-lg border-none"
+                >
+                  Back
+                </Button>
+              ) : (
+                <div></div>
+              )}
               
               <Button
                 onClick={handleNext}
                 disabled={!canProceed}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-onboarding-title px-8 shadow-lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-aref-ruqaa px-8 shadow-lg"
               >
                 {isLastStep ? "Begin Your Journey" : "Continue"}
               </Button>
